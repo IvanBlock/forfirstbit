@@ -68,7 +68,7 @@ public class NewsStrategy {   //стратегия парсинга https://habr
     private Document getDocument() throws IOException {
 
 
-        String url = "https://habrahabr.ru/search/?target_type=posts&q=java&order_by=relevance";
+        String url = "https://habrahabr.ru/search/?target_type=posts&q=java&order_by=date";
         Document document = Jsoup.connect(url)
                 .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
                 .referrer("none")
