@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Таблица новостей</title>
+    <link rel="stylesheet"
+    th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}"/>
+
+</head>
+<body>
+    <div class="container">
+        <div th:if="${not #lists.isEmpty(newsList)}">
+            <table class="table table-striped table-bordered">
+                <caption>Таблица новостей</caption>
+                    <tr>
+                        <th>Название новости</th>
+                        <th>URL</th>
+                    </tr>
+                    <tr th:each="model : ${newsList}">
+                        <td th:text="${model.title}"></td>
+                        <td><a th:href="@{${model.url}}" th:text="${model.url}"></a></td>
+                    </tr>
+
+            </table>
+
+        </div>
+    </div>
+
+</body>
+</html>
