@@ -33,7 +33,6 @@ public class IndexController{
         else{                   //если millisec от 2.00 до 24.00
             requiredTime = 86400000 - (millisec - requiredTime);
         }
-        System.out.println(requiredTime);
 
         timer.schedule(timerTask, requiredTime, 86400000);  //запускам тред в 2 часа ночи и обновляем данные в БД через 24 часа
 
